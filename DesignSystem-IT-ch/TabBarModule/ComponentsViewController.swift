@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ComponentsViewController: UIViewController {
     private let button: UIView = PrimaryButton(title: "Войти через ЕЛК")
 
     override func viewDidLoad() {
