@@ -50,6 +50,7 @@ final class TextStylesViewController: UIViewController {
     // MARK: - SetUp
     private func setUp() {
         view.backgroundColor = UIColor(color: .backgroundGray)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
         setUpTable()
     }

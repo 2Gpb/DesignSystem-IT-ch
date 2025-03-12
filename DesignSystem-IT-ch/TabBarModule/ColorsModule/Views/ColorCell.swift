@@ -68,8 +68,8 @@ final class ColorCell: UITableViewCell {
         contentView.addSubview(colorView)
         colorView.pinCenterY(to: contentView.centerYAnchor)
         colorView.pinLeft(to: contentView)
-        colorView.setHeight(Constant.Color.cornerRadius)
-        colorView.setWidth(Constant.Color.cornerRadius)
+        colorView.setHeight(Constant.Color.dimension)
+        colorView.setWidth(Constant.Color.dimension)
     }
     
     private func setUpLabel() {

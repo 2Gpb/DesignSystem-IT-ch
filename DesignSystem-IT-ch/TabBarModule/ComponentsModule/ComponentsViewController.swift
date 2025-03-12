@@ -16,9 +16,14 @@ final class ComponentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(color: .backgroundGray)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
         view.addSubview(textField)
+        view.addSubview(button)
         textField.pinCenterY(to: view)
         textField.pinHorizontal(to: view, 16)
+        
+        button.pinTop(to: textField.bottomAnchor, 16)
+        button.pinHorizontal(to: view, 16)
     }
 }
