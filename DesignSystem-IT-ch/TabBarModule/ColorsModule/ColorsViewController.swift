@@ -15,6 +15,7 @@ final class ColorsViewController: UIViewController {
             static let headersHeight: CGFloat = 36
             static let headers: [String] = ["Accent Colors", "Base Colors", "Blue Colors", "Red Colors", "Green Colors"]
             static let horizontalOffset: CGFloat = 16
+            static let separatorHeight: CGFloat = 1
         }
     }
     
@@ -101,12 +102,36 @@ final class ColorsViewController: UIViewController {
         table.dataSource = self
         table.backgroundColor = .clear
         table.showsVerticalScrollIndicator = false
+        table.separatorStyle = .none
         table.register(ColorCell.self, forCellReuseIdentifier: ColorCell.reuseID)
         
         view.addSubview(table)
         table.pinHorizontal(to: view, Constant.TableView.horizontalOffset)
         table.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
         table.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    private func setUpHeader(for section: Int) -> UIView {
+        let headerView = UIView()
+        let separatorView = UIView()
+        let label = UILabel()
+        
+        separatorView.backgroundColor = UIColor(color: .base60)
+        headerView.backgroundColor = UIColor(color: .backgroundGray)
+        label.textColor = UIColor(color: .base0)
+        label.font = TextStyle.header5SemiBold.font
+        label.text = Constant.TableView.headers[section]
+        
+        headerView.addSubview(separatorView)
+        separatorView.pinHorizontal(to: headerView)
+        separatorView.pinBottom(to: headerView)
+        separatorView.setHeight(Constant.TableView.separatorHeight)
+        
+        headerView.addSubview(label)
+        label.pinLeft(to: headerView)
+        label.pinCenterY(to: headerView)
+
+        return headerView
     }
 }
 
@@ -117,19 +142,7 @@ extension ColorsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        let label = UILabel()
-        
-        headerView.backgroundColor = UIColor(color: .backgroundGray)
-        label.textColor = UIColor(color: .base10)
-        label.font = TextStyle.header5SemiBold.font
-        label.text = Constant.TableView.headers[section]
-        
-        headerView.addSubview(label)
-        label.pinLeft(to: headerView)
-        label.pinCenterY(to: headerView)
-        
-        return headerView
+        return setUpHeader(for: section)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

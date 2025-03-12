@@ -24,25 +24,25 @@ struct FontDescription {
 }
 
 enum TextStyle {
-    // MARK: - H3: 32pt
+    // MARK: - H3: 32px
     case header3
     
-    // MARK: - H4: 26pt
+    // MARK: - H4: 26px
     case header4
     
-    // MARK: - H5: 20pt
+    // MARK: - H5: 20px
     case header5Medium
     case header5SemiBold
     
-    // MARK: - Body M: 16pt
+    // MARK: - Body M: 16px
     case bodyMRegular
     case bodyMMedium
     
-    // MARK: - Body S: 14pt
+    // MARK: - Body S: 14px
     case bodySRegular
     case bodySMedium
 
-    // MARK: - Caption: 12pt
+    // MARK: - Caption: 12px
     case captionRegular
     case captionMedium
 }

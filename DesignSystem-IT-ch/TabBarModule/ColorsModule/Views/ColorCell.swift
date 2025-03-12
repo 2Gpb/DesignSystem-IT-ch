@@ -8,8 +8,28 @@
 import UIKit
 
 final class ColorCell: UITableViewCell {
+    // MARK: - Constants
+    private enum Constant {
+        enum reuseID {
+            static let value = "ColorCell"
+        }
+        
+        enum Error {
+            static let message = "init(coder:) has not been implemented"
+        }
+        
+        enum Color {
+            static let cornerRadius: CGFloat = 8
+            static let dimension: CGFloat = 64
+        }
+        
+        enum Label {
+            static let leftOffset: CGFloat = 16
+        }
+    }
+    
     // MARK: - Reuse ID
-    static let reuseID = "ColorCell"
+    static let reuseID = Constant.reuseID.value
     
     // MARK: - UI Components
     private let colorView: UIView = UIView()
@@ -24,7 +44,7 @@ final class ColorCell: UITableViewCell {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Constant.Error.message)
     }
     
     // MARK: - Methods
@@ -43,13 +63,13 @@ final class ColorCell: UITableViewCell {
     }
     
     private func setUpColorView() {
-        colorView.layer.cornerRadius = 8
+        colorView.layer.cornerRadius = Constant.Color.cornerRadius
         
         contentView.addSubview(colorView)
         colorView.pinCenterY(to: contentView.centerYAnchor)
         colorView.pinLeft(to: contentView)
-        colorView.setHeight(64)
-        colorView.setWidth(64)
+        colorView.setHeight(Constant.Color.cornerRadius)
+        colorView.setWidth(Constant.Color.cornerRadius)
     }
     
     private func setUpLabel() {
@@ -57,7 +77,7 @@ final class ColorCell: UITableViewCell {
         label.textColor = UIColor(color: .base0)
         
         contentView.addSubview(label)
-        label.pinLeft(to: colorView.trailingAnchor, 16)
+        label.pinLeft(to: colorView.trailingAnchor, Constant.Label.leftOffset)
         label.pinCenterY(to: colorView.centerYAnchor)
     }
 }
