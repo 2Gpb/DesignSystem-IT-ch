@@ -8,14 +8,17 @@
 import UIKit
 
 final class ComponentsViewController: UIViewController {
+    // MARK: - UI Components
     private let button: UIView = PrimaryButton(title: "Войти через ЕЛК")
+    private let textField: UIView = PrimaryTextField(title: "Email", placeholder: "Введите логин")
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(color: .backgroundGray)
         
-        view.addSubview(button)
-        button.pinCenterY(to: view)
-        button.pinHorizontal(to: view, 16)
+        view.addSubview(textField)
+        textField.pinCenterY(to: view)
+        textField.pinHorizontal(to: view, 16)
     }
 }
