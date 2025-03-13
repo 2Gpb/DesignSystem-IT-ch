@@ -12,6 +12,11 @@ final class ComponentsViewController: UIViewController {
     private let button: UIView = PrimaryButton(title: "Войти через ЕЛК")
     private let textField: UIView = PrimaryTextField(title: "Email", placeholder: "Введите логин")
     private let navigationRow: UIView = PrimaryNavigationRow(title: "Чат курса")
+    private let navigationBar: UIView = PrimaryNavigationBar(
+        title: "Дизайн система",
+        leftImage: UIImage(named: "ArrowLeft"),
+        rightImage: UIImage(named: "Options")
+    )
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -22,7 +27,12 @@ final class ComponentsViewController: UIViewController {
         view.addSubview(textField)
         view.addSubview(button)
         view.addSubview(navigationRow)
-        textField.pinCenterY(to: view)
+        view.addSubview(navigationBar)
+        
+        navigationBar.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
+        navigationBar.pinHorizontal(to: view)
+        
+        textField.pinTop(to: navigationBar.bottomAnchor, 24)
         textField.pinHorizontal(to: view, 16)
         
         button.pinTop(to: textField.bottomAnchor, 24)

@@ -17,7 +17,6 @@ final class PrimaryButton: UIView {
         enum Button {
             static let height: CGFloat = 48
             static let cornerRadius: CGFloat = 12
-            static let defaultTitle: String = "Button"
         }
     }
     
@@ -32,7 +31,7 @@ final class PrimaryButton: UIView {
     
     // MARK: - Lifecycle
     init(
-        title: String? = Constant.Button.defaultTitle,
+        title: String?,
         type: typeButton = .primary
     ) {
         super.init(frame: .zero)
