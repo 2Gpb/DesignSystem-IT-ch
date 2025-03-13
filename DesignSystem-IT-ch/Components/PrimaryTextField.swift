@@ -34,6 +34,8 @@ final class PrimaryTextField: UIView {
     // MARK: - UI Components
     private let label: UILabel = UILabel()
     private let textField: UITextField = UITextField()
+    private let leftView: UIView = UIView(frame: Constant.TextField.edgeViewsFrame)
+    private let rightView: UIView = UIView(frame: Constant.TextField.edgeViewsFrame)
     
     // MARK: - Lifecycle
     init(title: String, placeholder: String) {
@@ -72,9 +74,6 @@ final class PrimaryTextField: UIView {
     }
     
     private func setUpTextField() {
-        let leftView: UIView = UIView(frame: Constant.TextField.edgeViewsFrame)
-        let rightView: UIView = UIView(frame: Constant.TextField.edgeViewsFrame)
-        
         textField.leftView = leftView
         textField.rightView = rightView
         textField.leftViewMode = .always
