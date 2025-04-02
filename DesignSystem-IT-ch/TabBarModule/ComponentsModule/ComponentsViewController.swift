@@ -17,17 +17,24 @@ final class ComponentsViewController: UIViewController {
         leftImage: UIImage(named: "ArrowLeft"),
         rightImage: UIImage(named: "Options")
     )
+    
+    private let homeWorkCell: PrimaryHomeWorkCell = PrimaryHomeWorkCell(
+        title: "Домашнее задание 1",
+        date: Date(),
+        type: .teacher
+    )
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(color: .backgroundGray)
+        view.backgroundColor = UIColor(color: .backgroundDark)
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         view.addSubview(textField)
         view.addSubview(button)
         view.addSubview(navigationRow)
         view.addSubview(navigationBar)
+        view.addSubview(homeWorkCell)
         
         navigationBar.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
         navigationBar.pinHorizontal(to: view)
@@ -40,5 +47,8 @@ final class ComponentsViewController: UIViewController {
         
         navigationRow.pinTop(to: button.bottomAnchor, 24)
         navigationRow.pinHorizontal(to: view, 16)
+        
+        homeWorkCell.pinTop(to: navigationRow.bottomAnchor, 24)
+        homeWorkCell.pinHorizontal(to: view, 16)
     }
 }

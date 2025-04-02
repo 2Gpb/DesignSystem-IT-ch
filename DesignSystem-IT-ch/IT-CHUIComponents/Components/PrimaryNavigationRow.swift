@@ -37,8 +37,15 @@ final class PrimaryNavigationRow: UIView {
     private let label: UILabel = UILabel()
     private let chevron: UIImageView = UIImageView()
     
+    // MARK: - Variables
+    var title: String? {
+        didSet {
+            label.text = title
+        }
+    }
+    
     // MARK: - Lifecycle
-    init(title: String, leftImage: UIImage? = nil) {
+    init(title: String = "test", leftImage: UIImage? = nil) {
         super.init(frame: .zero)
         
         label.text = title
