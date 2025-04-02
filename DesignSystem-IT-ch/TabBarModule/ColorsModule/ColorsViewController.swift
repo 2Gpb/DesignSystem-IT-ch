@@ -20,66 +20,66 @@ final class ColorsViewController: UIViewController {
     }
     
     // MARK: - Colors
-    let accentColors: [(title: String, color: UIColor)] = [
-        ("Background Dark", UIColor(color: .backgroundDark)),
-        ("Background Gray", UIColor(color: .backgroundGray)),
-        ("Tab Bar", UIColor(color: .tabBar)),
-        ("Cell Gray", UIColor(color: .cellGray)),
-        ("Cell Light Gray", UIColor(color: .cellLightGray))
-    ]
-    
-    let baseColors: [(title: String, color: UIColor)] = [
-        ("Base 0", UIColor(color: .base0)),
-        ("Base 5", UIColor(color: .base5)),
-        ("Base 10", UIColor(color: .base10)),
-        ("Base 20", UIColor(color: .base20)),
-        ("Base 30", UIColor(color: .base30)),
-        ("Base 40", UIColor(color: .base40)),
-        ("Base 50", UIColor(color: .base50)),
-        ("Base 60", UIColor(color: .base60)),
-        ("Base 70", UIColor(color: .base70)),
-        ("Base 80", UIColor(color: .base80)),
-        ("Base 90", UIColor(color: .base90))
-    ]
-    
-    let blueColors: [(title: String, color: UIColor)] = [
-        ("Blue 5", UIColor(color: .blue5)),
-        ("Blue 10", UIColor(color: .blue10)),
-        ("Blue 20", UIColor(color: .blue20)),
-        ("Blue 30", UIColor(color: .blue30)),
-        ("Blue 40", UIColor(color: .blue40)),
-        ("Blue 50", UIColor(color: .blue50)),
-        ("Blue 60", UIColor(color: .blue60)),
-        ("Blue 70", UIColor(color: .blue70)),
-        ("Blue 80", UIColor(color: .blue80)),
-        ("Blue 90", UIColor(color: .blue90))
-    ]
+       let accentColors: [(title: String, color: UIColor)] = [
+           ("Background Dark - #0E0E10", UIColor(color: .backgroundDark)),
+           ("Background Gray - #24282C", UIColor(color: .backgroundGray)),
+           ("Tab Bar - #202124", UIColor(color: .tabBar)),
+           ("Cell Gray - #323234", UIColor(color: .cellGray)),
+           ("Cell Light Gray - #3F464B", UIColor(color: .cellLightGray))
+       ]
+       
+       let baseColors: [(title: String, color: UIColor)] = [
+           ("Base 0 - #FFFFFF", UIColor(color: .base0)),
+           ("Base 5 - #F3F3F3", UIColor(color: .base5)),
+           ("Base 10 - #DDDDDD", UIColor(color: .base10)),
+           ("Base 20 - #C6C6C6", UIColor(color: .base20)),
+           ("Base 30 - #B0B0B0", UIColor(color: .base30)),
+           ("Base 40 - #9B9B9B", UIColor(color: .base40)),
+           ("Base 50 - #868686", UIColor(color: .base50)),
+           ("Base 60 - #707070", UIColor(color: .base60)),
+           ("Base 70 - #4F4F4F", UIColor(color: .base70)),
+           ("Base 80 - #3A3A3A", UIColor(color: .base80)),
+           ("Base 90 - #191919", UIColor(color: .base90))
+       ]
+       
+       let blueColors: [(title: String, color: UIColor)] = [
+           ("Blue 5 - #F7F0FF", UIColor(color: .blue5)),
+           ("Blue 10 - #E4D2FF", UIColor(color: .blue10)),
+           ("Blue 20 - #CCB6FF", UIColor(color: .blue20)),
+           ("Blue 30 - #B19BFF", UIColor(color: .blue30)),
+           ("Blue 40 - #9282FF", UIColor(color: .blue40)),
+           ("Blue 50 - #716BFF", UIColor(color: .blue50)),
+           ("Blue 60 - #4E54FF", UIColor(color: .blue60)),
+           ("Blue 70 - #3343EC", UIColor(color: .blue70)),
+           ("Blue 80 - #2436CB", UIColor(color: .blue80)),
+           ("Blue 90 - #1D289A", UIColor(color: .blue90))
+       ]
 
-    let redColors: [(title: String, color: UIColor)] = [
-        ("Red 5", UIColor(color: .red5)),
-        ("Red 10", UIColor(color: .red10)),
-        ("Red 20", UIColor(color: .red20)),
-        ("Red 30", UIColor(color: .red30)),
-        ("Red 40", UIColor(color: .red40)),
-        ("Red 50", UIColor(color: .red50)),
-        ("Red 60", UIColor(color: .red60)),
-        ("Red 70", UIColor(color: .red70)),
-        ("Red 80", UIColor(color: .red80)),
-        ("Red 90", UIColor(color: .red90))
-    ]
-    
-    let greenColors: [(title: String, color: UIColor)] = [
-        ("Green 5", UIColor(color: .green5)),
-        ("Green 10", UIColor(color: .green10)),
-        ("Green 20", UIColor(color: .green20)),
-        ("Green 30", UIColor(color: .green30)),
-        ("Green 40", UIColor(color: .green40)),
-        ("Green 50", UIColor(color: .green50)),
-        ("Green 60", UIColor(color: .green60)),
-        ("Green 70", UIColor(color: .green70)),
-        ("Green 80", UIColor(color: .green80)),
-        ("Green 90", UIColor(color: .green90))
-    ]
+       let redColors: [(title: String, color: UIColor)] = [
+           ("Red 5 - #FFEDE7", UIColor(color: .red5)),
+           ("Red 10 - #FFC9BA", UIColor(color: .red10)),
+           ("Red 20 - #FFA590", UIColor(color: .red20)),
+           ("Red 30 - #FF806B", UIColor(color: .red30)),
+           ("Red 40 - #FF5C4C", UIColor(color: .red40)),
+           ("Red 50 - #FD3732", UIColor(color: .red50)),
+           ("Red 60 - #E1011C", UIColor(color: .red60)),
+           ("Red 70 - #C2000F", UIColor(color: .red70)),
+           ("Red 80 - #A60008", UIColor(color: .red80)),
+           ("Red 90 - #7D0003", UIColor(color: .red90))
+       ]
+       
+       let greenColors: [(title: String, color: UIColor)] = [
+           ("Green 5 - #EBF7E7", UIColor(color: .green5)),
+           ("Green 10 - #C3E7BA", UIColor(color: .green10)),
+           ("Green 20 - #9CD58F", UIColor(color: .green20)),
+           ("Green 30 - #75C369", UIColor(color: .green30)),
+           ("Green 40 - #50AF47", UIColor(color: .green40)),
+           ("Green 50 - #2A9A29", UIColor(color: .green50)),
+           ("Green 60 - #00830A", UIColor(color: .green60)),
+           ("Green 70 - #006E00", UIColor(color: .green70)),
+           ("Green 80 - #005C00", UIColor(color: .green80)),
+           ("Green 90 - #004500", UIColor(color: .green90))
+       ]
 
     // MARK: UI Components
     private let table: UITableView = UITableView()

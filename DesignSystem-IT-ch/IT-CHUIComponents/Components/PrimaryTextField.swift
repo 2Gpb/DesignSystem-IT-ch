@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PrimaryTextField: UIView {
+extension PrimaryTextField {
     // MARK: - Constants
     private enum Constant {
         enum Error {
@@ -20,7 +20,7 @@ final class PrimaryTextField: UIView {
             static let topOffset: CGFloat = 8
             static let height: CGFloat = 48
             static let edgeViewsFrame: CGRect = CGRect(x: 0, y: 0, width: 16, height: 1)
-            static let placeholderAttributes: [NSAttributedString.Key : Any] = [
+            @MainActor static let placeholderAttributes: [NSAttributedString.Key : Any] = [
                 .font: TextStyle.bodyMRegular.font,
                 .foregroundColor: UIColor(color: .base50)
             ]
@@ -30,12 +30,16 @@ final class PrimaryTextField: UIView {
             static let height: CGFloat = 73
         }
     }
-    
+}
+
+final class PrimaryTextField: UIView {
     // MARK: - UI Components
     private let label: UILabel = UILabel()
     private let textField: UITextField = UITextField()
     private let leftView: UIView = UIView(frame: Constant.TextField.edgeViewsFrame)
     private let rightView: UIView = UIView(frame: Constant.TextField.edgeViewsFrame)
+    
+    var onDidFinish: ((String) -> Void)?
     
     // MARK: - Lifecycle
     init(title: String, placeholder: String) {
@@ -83,7 +87,6 @@ final class PrimaryTextField: UIView {
         textField.layer.cornerRadius = Constant.TextField.cornerRadius
         textField.layer.borderWidth = Constant.TextField.borderwidth
         textField.layer.borderColor = UIColor(color: .cellLightGray).cgColor
-        textField.backgroundColor = .clear
         
         addSubview(textField)
         textField.pinHorizontal(to: self)
